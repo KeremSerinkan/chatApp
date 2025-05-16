@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="chatApp.LoginPage"
+             >
+    <Grid>
+        <Grid RowDefinitions=".3*,.7*">
+        <!--<Image Aspect="AspectFill" Source="loginbackground.png"/>-->
+        <Grid BackgroundColor="#7AB8A5" Opacity=".9"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFill"
+                   HeightRequest="120"
+                   Source="vhselektroniklogo.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle
+                Margin="-5,-30,-5,-2"
+                CornerRadius="30,30,0,0"
+                Fill="White"/>
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label FontAttributes="Bold"
+                       FontFamily="bold"
+                       FontSize="Medium"
+                       Text="Hoşgeldiniz!"
+                       TextColor="#2D2D2D"/>
+                <Label FontFamily="medium"
+                       Text="Giriş yapınız"
+                       TextColor="#A3A3A4"/>
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <Frame
+                        BackgroundColor="#7AB8A5"
+                        Opacity=".2"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        WidthRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HasShadow="False"/>
+                    <Image HorizontalOptions="Center"
+                           Source="username.png"
+                           HeightRequest="30"
+                           WidthRequest="30"/>
+                    <Entry
+                        x:Name="usernameEntry"
+                        Grid.Column="1"
+                        Placeholder="Kullanıcı Adı"
+
+                        VerticalOptions="Center"/>
+                     
+                </Grid>
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <Frame
+                        BackgroundColor="#7AB8A5"
+                        Opacity=".2"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        WidthRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HasShadow="False"/>
+                    <Image HorizontalOptions="Center"
+                           Source="key.png"
+                           HeightRequest="26"
+                           WidthRequest="26"/>
+                    <Entry
+                        x:Name="passwordEntry"
+                        Grid.Column="1"
+                        IsPassword="True"
+                        Placeholder="Şifre"
+                        VerticalOptions="Center"/>
+                     
+                </Grid>
+                <Button
+                    x:Name="btnSignIn"
+                    Margin="0,20,0,0"
+                    HeightRequest="60"
+                    Text="Giriş"
+                    TextColor="#FBF6FD"
+                    Clicked="btnSignIn_Clicked"/>
+
+            </VerticalStackLayout>
+
+        </Grid>
+    </Grid>
+
+        <Grid x:Name="LoadingOverlay" 
+              BackgroundColor="#80000000" 
+              IsVisible="False"
+              Grid.RowSpan="2" 
+              HorizontalOptions="FillAndExpand" 
+              VerticalOptions="FillAndExpand">
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <ActivityIndicator IsRunning="True"
+                               Color="White"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               WidthRequest="100"
+                               HeightRequest="100"/>
+            <Label Text="Giriş Yapılıyor..."
+           TextColor="White"
+           FontSize="20"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           Margin="0, 20, 0, 0"/>
+
+            </VerticalStackLayout>
+            
+        </Grid>
+
+    </Grid>
+</ContentPage>
